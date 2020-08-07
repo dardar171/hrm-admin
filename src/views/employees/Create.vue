@@ -64,7 +64,7 @@
       </v-form>
       </v-card-text>
       </v-card>
-      <v-btn @click="greet">Click</v-btn>
+      
   </v-container>
 </template>
 

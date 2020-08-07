@@ -60,34 +60,34 @@ const actions={
         commit("setEmployee",data);
     },
     async getEmployees({commit}){
-        const res=await axios.get("http://localhost:8000/api/employees",{headers:{"Authorization":"Bearer "+store.getters.accessToken}});
+        const res=await axios.get("/api/employees",{headers:{"Authorization":"Bearer "+store.getters.accessToken}});
         commit("setEmployees",res.data);
   
     },
     async createEmployee({commit},data){
-        const res=await axios.post("http://localhost:8000/api/employees",data,);
+        const res=await axios.post("/api/employees",data,{headers:{"Authorization":"Bearer "+store.getters.accessToken}});
 
         commit("storeEmployee",res.data);
     },
     async getEmployee({commit},id){
        
-        const res=await axios.get("http://localhost:8000/api/employees/"+id,{headers:{"Authorization":"Bearer "+store.getters.accessToken}});
+        const res=await axios.get("/api/employees/"+id,{headers:{"Authorization":"Bearer "+store.getters.accessToken}});
   
             commit("setEmployee",res.data);
      
     },
     async updateEmployee({commit},employee){
-        const res=await axios.put("http://localhost:8000/api/employees/"+employee.id,employee,{headers:{"Authorization":"Bearer "+store.getters.accessToken}});
+        const res=await axios.put("/api/employees/"+employee.id,employee,{headers:{"Authorization":"Bearer "+store.getters.accessToken}});
             commit("setEmployee",res.data)
 
     },
     async updateEmployeeDetail({commit},formData){
-        const res=await axios.put("http://localhost:8000/api/employeeDetails/"+formData.id,formData,{headers:{"Authorization":"Bearer "+store.getters.accessToken}});
+        const res=await axios.put("/api/employeeDetails/"+formData.id,formData,{headers:{"Authorization":"Bearer "+store.getters.accessToken}});
             commit("setEmployeeDetail",res.data)
 
     },
     async deleteEmployee({commit},id){
-        await axios.delete("http://localhost:8000/api/employees/"+id);
+        await axios.delete("/api/employees/"+id);
         commit("removeEmployee",id)
     }
 }

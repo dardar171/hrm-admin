@@ -16,11 +16,11 @@ const actions={
         var formData=new FormData();
         formData.append('grant_type','password');
         formData.append('client_id','2');
-        formData.append('client_secret','BaO1hNj3uPexVbbmWcz8nDmfK73O6FSsYz2FcUKa');
+        formData.append('client_secret','WRScrfXN3g24H47cfs6Ck6xtL98D9u3zVS0737Oo');
         formData.append('username',data.email);
         formData.append('password',data.password);
         formData.append('scope','');
-        const res=await axios.post("http://localhost:8000/oauth/token",formData,{headers:{'Content-Type':'multipart/form-data'}});
+        const res=await axios.post("/oauth/token",formData,{headers:{'Content-Type':'multipart/form-data'}});
         console.log(res.data);
         commit('storeAccessToken',res.data.access_token)
     },
