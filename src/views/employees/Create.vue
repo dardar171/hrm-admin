@@ -16,7 +16,8 @@
            v-model="name" ></v-text-field>
           <v-text-field prepend-icon="mdi-email" label="Email"  @input="$v.email.$touch()" @blur="$v.email.$touch()" type="email" v-model="email" ></v-text-field>
           
-          <!-- <v-text-field prepend-icon="mdi-lock" label="Password:" type="text" v-model="password" :rules="[minLength,required('Password')]"
+          <!-- <v-text-field prepend-icon="mdi-lock" label="Password:" type="text" v-model="password" 
+          :rules="[minLength,required('Password')]"
             :counter="10"
       
             required></v-text-field> -->

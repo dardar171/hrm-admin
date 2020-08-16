@@ -22,7 +22,7 @@ const mutations={
         state.employee.employee_detail=employeeDetail;
     },
     updateEmployee(state,employee){
-        var index=state.employees.findIndex(e=>e==employee.id);
+        var index=state.employees.findIndex(e=>e.id==employee.id);
         state.employees[index]=employee;
     },
     removeEmployee(state,id){
@@ -98,6 +98,7 @@ const getters={
     employee(state){
         return state.employee;
     },
+    
 }
 var employees={
     state,
